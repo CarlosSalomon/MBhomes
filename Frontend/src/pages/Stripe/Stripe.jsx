@@ -53,7 +53,7 @@ const Stripe = () => {
     <div className="container-md containercomp">
       <Wrapper hidden={payment}>
         <h1 className="mt-4 mb-4 bg-opacity-8 border rounded text-center">
-          DETALLES DE COMPRA
+          TU COMPRA
         </h1>
       </Wrapper>
       <Wrapper hidden={!payment}>
@@ -88,7 +88,7 @@ const Stripe = () => {
             className="btn btn-primary w-25"
             onClick={() => setPayment(tid)}
           >
-            Ir a pagar
+          Pagar
           </button>
         </div>
       </Wrapper>
