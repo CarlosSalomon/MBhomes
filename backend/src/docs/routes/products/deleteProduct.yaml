@@ -1,0 +1,28 @@
+paths:
+  /api/products/{pid}:
+    delete:
+      summary: Eliminar un productos de la App, filtrando por su pid.
+      tags:
+        - Productos
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: id del producto que desea eliminar.
+          schema:
+            $type: String  
+      responses:
+        "200":
+          description: Respuesta exitosa! Producto eliminado correctamente .
+          content:
+            text/plain:
+              schema:
+                type: object
+              example: {
+                mensaje: "Producto eliminado exitosamente."
+              }
+        "404":
+          description: Error. No se ha podido eliminar producto. Se envío un dato no valido.
+        "500":
+          description: Error inesperado en el servidor, no se pudo manejar el proceso.   
+

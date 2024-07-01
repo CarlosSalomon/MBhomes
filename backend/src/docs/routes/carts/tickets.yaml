@@ -1,0 +1,48 @@
+paths:
+  /tickets:
+    post:
+      summary: Finalizar compra del carrito
+      description: Permite finalizar la compra del carrito de un usuario.
+      tags:
+        - Carts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cid:
+                  type: string
+                  description: ID del carrito a finalizar
+      responses:
+        '201':
+          description: Compra realizada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Mensaje de éxito
+        '404':
+          description: No se realizó ninguna compra
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Mensaje de error
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Mensaje de error

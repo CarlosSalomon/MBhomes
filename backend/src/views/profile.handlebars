@@ -1,0 +1,79 @@
+
+    {{>navBar}}
+<div class="container-md">
+  <h1 class="mt-4 mb-4 bg-opacity-8 border rounded text-center">Perfil de
+    Usuario</h1>
+
+  <div class="mt-4 pt-3 mb-4 bg-opacity-8 border rounded text-center text-color">
+    <h3>Bienvenido {{user.first_name}}</h3>
+    <p><strong>Nombre: </strong>{{user.first_name}} {{user.last_name}} </p>
+    <p><strong>Email: </strong> {{user.email}}</p>
+    <p><strong>Edad: </strong>: </strong>{{user.age}}</p>
+    <p><strong>uid: </strong>: </strong>{{user._id}}</p>
+    <div class="d-flex justify-content-center">
+      <p class="my-auto"><strong>Rol: </strong>{{user.rol}}</p>
+      <button
+        id="changeRole"
+        data-user-id="{{user._id}}"
+        data-user-rol="{{user.rol}}"
+        data-user-email="{{user.email}}"
+        class="btn btn-outline-secondary mx-3"
+      >Modificar Rol</button>
+    </div>
+    <p> <strong>IdCart: </strong> {{user.cartId}} </p>
+  </div>
+      <div class="mt-4 pt-3 mb-4 bg-opacity-8 border rounded text-center" style="padding-bottom: 20px;">
+        <div class="bg-opacity-8 border rounded w-50 mx-auto pb-2 text-color">
+            <p><strong>Documentación:</strong></p>
+            {{#if user.documents}}
+            <div class="comprobante mx-auto">
+                <ul>
+                    {{#each user.documents}}
+                    <li>Comprobante de {{this.name}} ✅</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{else}}
+            <p>Aún no has completado tu documentación</p>
+            {{/if}}
+        </div>
+        <div></div>
+    </div>
+
+        <div class="mt-4 pt-3 mb-4 bg-opacity-8 border rounded text-center" style="padding-bottom: 20px; ">
+        <h3 class="mt-4 pt-2 pb-2 bg-opacity-8 border rounded text-center text-color" style="margin: 20px ">Completar o
+            Actualizar documentación</h3>
+
+        <form id="formIdentificacion" class="mt-2 mb-4 p-3 bg-opacity-8 border rounded text-center text-color"
+            enctype="multipart/form-data" data-form="{{user._id}}" style="margin: 20px">
+            <label class="mt-2 doc-label" for="identificacion"><strong>
+                    Identificacion:
+                </strong>
+            </label>
+            <input type="file" id="identificacion" name="identificacion" />
+            <input class="mx-4 btn btn-primary" type="submit" />
+        </form>
+
+        <form id="formDomicilio" class="mt-2 mb-4 p-3 bg-opacity-8 border rounded text-center text-color"
+            enctype="multipart/form-data" data-form="{{user._id}}" style="margin: 20px">
+            <label class="mt-2 doc-label" for="domicilio"><strong>
+                    Comprobante de domicilio:
+                </strong>
+            </label>
+            <input type="file" id="domicilio" name="domicilio" />
+            <input class="mx-4 btn btn-primary" type="submit" />
+        </form>
+
+        <form id="formCuenta" class="mt-2 mb-4 p-3 bg-opacity-8 border rounded text-center text-color"
+            enctype="multipart/form-data" data-form="{{user._id}}" style="margin: 20px">
+            <label class="mt-2 doc-label" for="cuenta"><strong>
+                    Comprobante de estado de cuenta:
+                </strong>
+            </label>
+            <input type="file" id="cuenta" name="cuenta" />
+            <input class="mx-4 btn btn-primary" type="submit" />
+        </form>
+    </div>
+</div>
+<script src="/js/profile.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -1,0 +1,43 @@
+components:
+  schemas:
+    Carts:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por Mongo.
+        products:
+          type: Array
+          items:
+            productId:
+              type: ObjectId
+              description: Id del producto
+            quantity:
+              type: Number
+              minimun: 0
+              description: Cantidad del producto en el carrito
+            _id:
+              type: ObjectId
+              description: Id autogenerado por Mongo.
+      example:
+        
+            {
+              status: "success",
+              carritofound: {
+                  _id: "25894dg48j59r4126asd47864",
+                  products: [
+                    {
+                      _id: "25894dg48j59r4168de987th5",
+                      quantity: 3,
+                      title: "quinta",
+                      price: 78000
+                    }
+                  ],
+                  __v: 2
+                }
+            }
+
+
+                
+
+        

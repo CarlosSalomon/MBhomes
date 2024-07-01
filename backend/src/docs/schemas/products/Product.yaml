@@ -1,0 +1,56 @@
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID único del producto.
+        title:
+          type: string
+          description: Título del producto.
+        description:
+          type: string
+          description: Descripción del producto.
+        price:
+          type: number
+          format: float
+          description: Precio del producto.
+        stock:
+          type: integer
+          description: Cantidad en stock del producto.
+        thumbnail:
+          type: string
+          description: URL de la imagen en miniatura del producto.
+        code:
+          type: string
+          description: Código único del producto.
+        category:
+          type: string
+          description: Categoría del producto.
+        status:
+          type: boolean
+          description: Estado del producto (activo/inactivo).
+        owner:
+          type: string
+          description: Propietario del producto.
+      example:
+        products:
+          {
+            status: succes,
+            payload:
+              [
+                {
+                  _id: "65dbd389658d8dd003f945d5",
+                  title: Casa,
+                  description: Casa de 2 dormitorios,
+                  code: csa564,
+                  price: 7865,
+                  status: true,
+                  stock: 1,
+                  category: casa,
+                  thumbnail: https://imgar.zonapropcdn.com/avisos/resize/1/00/53/12/60/15/1200x1200/1899320895.jpg?isFirstImage=true,
+                  owner: admin,
+                },
+              ],
+          }

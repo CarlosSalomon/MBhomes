@@ -1,0 +1,31 @@
+<div class="background-login">
+    <div class="container-register">
+        <form id="login-form" action="/login" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputemail" class="form-label">Email</label>
+                <input type="text" class="form-control" id="exampleInputemail" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" name="password" class="form-control" required />
+            </div>
+            <button type="submit" class="signup-btn2">Iniciar sesión</button>
+            <button class="signup-btn2"><a href="/register">Registrate</a></button>
+            <div class="mb-3">
+                <button class="signup-btn2"><a href="/api/email/request-reset-password">¿Restablecer contraseña?</a></button>
+            </div>
+        </form>
+    </div>
+</div>
+        {{#if error}}
+        <div class="alert alert-danger cssalert" role="alert">
+            {{error}}
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+</div>
+<script>setTimeout(()=> {
+    document.querySelector('.alert-danger').style.display='none';},1000);
+</script>
