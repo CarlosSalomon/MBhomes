@@ -11,7 +11,7 @@
 #### Alejandro Huertas
 
 ## Logo
-![Logo](.//src/public/images/logo%20mb.png)
+![Logo](./backend/src/public/images/logo%20mb.png)
 
 ## Orientacion
 
